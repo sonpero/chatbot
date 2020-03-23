@@ -1,31 +1,22 @@
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - bonjour
+  - merci
+  - aurevoir
+  - robot_test
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_bonjour:
+  - text: "Bonjour, comment allez vous ?"
+  - text: "Salut, comment ça va ?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_merci:
+  - text: "Merci beaucoup"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_aurevoir:
+  - text: "Au revoir, à bientôt"
 
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_robot_test:
+  - text: "Je suis un robot"
 
 session_config:
   session_expiration_time: 60
