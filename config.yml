@@ -1,23 +1,24 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-# language: en
-# pipeline:
-#   - name: WhitespaceTokenizer
-#   - name: RegexFeaturizer
-#   - name: LexicalSyntacticFeaturizer
-#   - name: CountVectorsFeaturizer
-#   - name: CountVectorsFeaturizer
-#     analyzer: "char_wb"
-#     min_ngram: 1
-#     max_ngram: 4
-#   - name: DIETClassifier
-#     epochs: 100
-#   - name: EntitySynonymMapper
-#   - name: ResponseSelector
-#     epochs: 100
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
+
 policies:
   - name: MemoizationPolicy
     max_history: 1
@@ -25,10 +26,12 @@ policies:
 
 language: fr
 
-pipeline:
-- name: tokenizer_whitespace
-- name: ner_crf
-- name: ner_synonyms
-- name: intent_featurizer_count_vectors
-  token_pattern: (?u)\b\w+\b
-- name: intent_classifier_tensorflow_embedding
+#pipeline:
+#- name: WhitespaceTokenizer
+#- name: CRFEntityExtractor
+#- name: EntitySynonymMapper
+#- name: CountVectorsFeaturizer
+#- name: CountVectorsFeaturizer
+#  token_pattern: (?u)\b\w+\b
+#- name: DIETClassifier
+
