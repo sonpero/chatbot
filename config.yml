@@ -2,6 +2,8 @@
 # https://rasa.com/docs/rasa/nlu/components/
 
 pipeline:
+  #- name: SpacyNLP
+  #- name: SpacyTokenizer
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -22,9 +24,11 @@ pipeline:
 policies:
   - name: MemoizationPolicy
     max_history: 1
+  - name: TEDPolicy #Remplaçant de KerasPolicy
   - name: MappingPolicy
+  - name: FormPolicy
 
-language: fr
+language: "fr"
 
 #pipeline:
 #- name: WhitespaceTokenizer
