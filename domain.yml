@@ -1,31 +1,75 @@
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - bonjour
+  - merci
+  - aurevoir
+  - robot_test
+  - question
+  - blague
+  - emotions
+  - mail
+  - inform
+#      use_entities: []
+
+entities:
+  - message
+  - business_email
+  - person_name
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_bonjour:
+  - text: "Bonjour, comment puis je vous aider ?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_remerciements:
+  - text: "Merci beaucoup"
+  - text: "Merci bien"
+  - text: "Merci encore"
+  - text: "Merci"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_aurevoir:
+  - text: "Au revoir, à bientôt"
+  - text: "Au revoir, au plaisir de vous reparler"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_robot_test:
+  - text: "Je suis un robot"
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_question:
+  - text: "je l'ignore, mais la réponse à la grande question
+    sur la vie, l'univers et le reste est 42"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_blague:
+    - text: "Quelle est la couleur du virus de la grippe ? ... Gris pâle"
+    - text: "De quelle couleur sont les petits pois ? ... les petits pois sont rouges"
+
+  utter_merci:
+    - text: "de rien, c'est moi qui vous remercie"
+    - text: "je vous en prie, c'est un plaisir"
+
+  utter_emotions:
+    - text: ";)"
+    - text: ":)"
+    - text: ":o)"
+    - text: ":p"
+
+
+  utter_ask_business_email:
+    - text: Quelle est votre adresse mail s'il vous plait ?
+
+  utter_ask_person_name:
+    - text: Quel est votre nom?
+
+  utter_ask_message:
+    - text: Quel message souhaitez vous envoyer ?
+
+slots:
+  message:
+    type: unfeaturized
+  business_email:
+    type: unfeaturized
+  person_name:
+    type: unfeaturized
+
+forms:
+  - info_mail
 
 session_config:
   session_expiration_time: 60
