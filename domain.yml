@@ -62,7 +62,7 @@ responses:
 
 slots:
   message:
-    type: text
+    type: unfeaturized
   business_email:
     type: unfeaturized
   person_name:
